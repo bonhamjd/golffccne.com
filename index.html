@@ -456,7 +456,18 @@
       .info-item { flex: 1 1 140px; }
       .membership-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .events-table th:last-child, .events-table td:last-child { display: none; }
+    /* ── EVENTS MOBILE ── */
+    @media (max-width: 600px) {
+      .events-table thead { display: none; }
+      .events-table, .events-table tbody, .events-table tr, .events-table td { display: block; width: 100%; }
+      .events-table tr { border: 1px solid var(--border); border-radius: 4px; margin-bottom: 0.75rem; padding: 0.75rem; }
+      .events-table tr:hover td { background: none; }
+      .events-table td { border: none; padding: 0.2rem 0; }
+      .event-date { color: var(--red); font-size: 0.78rem; }
+      .event-name { font-size: 1rem; margin: 0.15rem 0 0.5rem; }
+      .event-links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+      .link-tag { margin-left: 0; font-size: 0.75rem; padding: 0.3rem 0.75rem; }
+    }
       section { padding: 3.5rem 1.25rem; }
     }
   </style>
