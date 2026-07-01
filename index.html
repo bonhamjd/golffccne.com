@@ -638,7 +638,34 @@
         </tr>
       </tbody>
     </table>
-    <p style="margin-top:1rem;font-size:0.78rem;color:var(--mid);"><a href="https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vSe6rViBWNdpfYhovDL2d5TlYFL5uIq9a5DinmxAtPOXdx9W88koM_72gruwR1VmPrIp10vDuJwzAdY/pubhtml?urp=gmail_link" target="_blank" style="color:var(--info);">View signups</a></p>
+    <div style="margin-top:1rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
+      <a href="https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vSe6rViBWNdpfYhovDL2d5TlYFL5uIq9a5DinmxAtPOXdx9W88koM_72gruwR1VmPrIp10vDuJwzAdY/pubhtml?urp=gmail_link" target="_blank" class="btn" style="font-size:0.78rem;">View signups</a>
+      <button id="past-events-toggle" class="btn" style="font-size:0.78rem;cursor:pointer;">Past Events</button>
+    </div>
+    <div id="past-events-archive" style="display:none;margin-top:1rem;background:var(--color-background-secondary);padding:1rem;border-radius:4px;">
+      <div style="margin-bottom:0.75rem;padding-bottom:0.75rem;border-bottom:0.5px solid var(--color-border-tertiary);">
+        <strong style="font-size:0.85rem;">3-Man w/ Calcutta</strong><br/>
+        <span style="font-size:0.75rem;color:var(--mid);">June 6–7 | <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQHRAo0S15oXr0jiarFyN2aSm5RyJeKSZPrebkHqlS-j8FKCY0bdfZNIKu9lmtYdf0rLb0FNrGRWUbv/pubhtml?gid=429758196&single=true" target="_blank" style="color:var(--info);">Tee Times &amp; Results</a></span>
+      </div>
+      <div style="margin-bottom:0.75rem;padding-bottom:0.75rem;border-bottom:0.5px solid var(--color-border-tertiary);">
+        <strong style="font-size:0.85rem;">Franklin Senior Invite (3-Man Scramble)</strong><br/>
+        <span style="font-size:0.75rem;color:var(--mid);">June 19 | Deadline: 6/18 | Entry: $180/team | Mulligans: $30 | Shotgun 10:00 AM, Meal included, Ages 50+</span>
+      </div>
+      <div style="margin-bottom:0.75rem;padding-bottom:0.75rem;border-bottom:0.5px solid var(--color-border-tertiary);">
+        <strong style="font-size:0.85rem;">Father's Day Tournament</strong><br/>
+        <span style="font-size:0.75rem;color:var(--mid);">June 21 | Deadline: 6/20 | Entry: $120/team | Mulligans: Included | Shotgun 1:00 PM, Meal included, Various family categories</span>
+      </div>
+      <div style="padding-bottom:0;">
+        <strong style="font-size:0.85rem;">Hildreth Alumni</strong><br/>
+        <span style="font-size:0.75rem;color:var(--mid);">June 27</span>
+      </div>
+    </div>
+    <script>
+      document.getElementById('past-events-toggle').addEventListener('click', function() {
+        var archive = document.getElementById('past-events-archive');
+        archive.style.display = archive.style.display === 'none' ? 'block' : 'none';
+      });
+    </script>
   </div>
 </section>
 
@@ -648,6 +675,15 @@
     <div class="section-label">Weekly Play</div>
     <h2 class="section-title">Leagues</h2>
     <div class="leagues-grid">
+
+      <div class="league-card" style="grid-column: 1 / -1;">
+        <h3>Two Man's Fun League</h3>
+        <div class="league-day">Every Wednesday &bull; 5:15 PM Tee Off</div>
+        <p style="margin-top:0.75rem;">6-week season running July 15 through August 19. Casual fun league format.</p>
+        <div style="margin-top:1.25rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <a class="btn" href="https://forms.gle/GkkvCT6qsX2Wpj4d9" target="_blank">Sign Up</a>
+        </div>
+      </div>
 
       <div class="league-card" style="grid-column: 1 / -1;">
         <h3>Men's League</h3>
