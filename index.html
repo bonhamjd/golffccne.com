@@ -553,20 +553,6 @@
       </thead>
       <tbody>
         <tr>
-          <td class="event-date">August 2</td>
-          <td><div class="event-name">2-Couple Tournament</div><div style="font-size:0.85rem;color:var(--red);margin-top:0.3rem;font-weight:500;">FULL - Waiting List Only</div><div style="font-size:0.85rem;color:var(--mid);margin-top:0.3rem;">Deadline: 8/1 | Entry: $250/team | Mulligans: Included | Shotgun 10:00 AM, Meal included, Limited to 24 teams</div></td>
-          <td class="event-links">
-            <a class="link-tag link-signup" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTWxtzcj7Z_tMwIYWTQvpabaSt0Yoa-B7GQaJcDa42a3nxrkXd8D1aC73Q88-z52qnyVRXAm6tWCrUa/pubhtml?gid=1439176474&single=true" target="_blank">Event Details</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="event-date">August 8</td>
-          <td class="event-name">FCC Member</td>
-          <td class="event-links">
-            <a class="link-tag link-signup" href="https://docs.google.com/forms/d/e/1FAIpQLSekDYDOw5Y9ZtZokUC07sEBjzJv28eBRPiyAbNL3v2qrCHV1Q/viewform?usp=publish-editor" target="_blank">Sign Up</a>
-          </td>
-        </tr>
-        <tr>
           <td class="event-date">August 15</td>
           <td class="event-name">Franklin Fire Dept.</td>
           <td class="event-links">
@@ -590,6 +576,11 @@
         <tr>
           <td class="event-date">&mdash;</td>
           <td><div class="event-name">Hildreth Fire Dept.</div><div style="font-size:0.85rem;color:var(--red);margin-top:0.3rem;font-weight:500;">Canceled</div></td>
+          <td class="event-links"></td>
+        </tr>
+        <tr>
+          <td class="event-date">&mdash;</td>
+          <td><div class="event-name">FCC Member</div><div style="font-size:0.85rem;color:var(--red);margin-top:0.3rem;font-weight:500;">Canceled</div></td>
           <td class="event-links"></td>
         </tr>
       </tbody>
@@ -619,9 +610,13 @@
         <strong style="font-size:0.85rem;">Glow Ball</strong><br/>
         <span style="font-size:0.75rem;color:var(--mid);">July 18 | Deadline: 7/12 | Entry: $200/team | Mulligans: N/A | Check-in 6:00 PM, Supper 7:00 PM, Golfing 8:00 PM</span>
       </div>
-      <div style="padding-bottom:0;">
+      <div style="margin-bottom:0.75rem;padding-bottom:0.75rem;border-bottom:0.5px solid var(--color-border-tertiary);">
         <strong style="font-size:0.85rem;">4 Ladies</strong><br/>
         <span style="font-size:0.75rem;color:var(--mid);">July 25 | <a href="https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vSUehOz3mt-3Wd7uhdTVxnDij3eCgiuiUOhDW9YrWCgmburxrd58VRvzdF8wVPIVJX0hPM1xj_wSmnB/pubhtml?urp=gmail_link" target="_blank" style="color:var(--info);">Results</a></span>
+      </div>
+      <div style="padding-bottom:0;">
+        <strong style="font-size:0.85rem;">2-Couple Tournament</strong><br/>
+        <span style="font-size:0.75rem;color:var(--mid);">August 2 | Deadline: 8/1 | Entry: $250/team | Mulligans: Included | Shotgun 10:00 AM, Meal included, Limited to 24 teams | <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTWxtzcj7Z_tMwIYWTQvpabaSt0Yoa-B7GQaJcDa42a3nxrkXd8D1aC73Q88-z52qnyVRXAm6tWCrUa/pubhtml?gid=1439176474&single=true" target="_blank" style="color:var(--info);">Event Details</a></span>
       </div>
     </div>
     <script>
@@ -641,7 +636,20 @@
     <div class="leagues-grid">
 
       <div class="league-card" style="grid-column: 1 / -1;">
-        <h3>Two Man's Fun League</h3>
+        <h3>Couples League</h3>
+        <div class="league-day">Typically Every Other Friday</div>
+        <p>See the Calendar tab at the top for current schedule.</p>
+        <p>Couples league plays every other Friday evening. Sign up the night of the event &mdash; no pre-registration needed.</p>
+      </div>
+
+    </div>
+    <div style="margin-top:1rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
+      <button id="past-leagues-toggle" class="btn" style="font-size:0.78rem;cursor:pointer;">Past Events</button>
+    </div>
+    <div id="past-leagues-archive" style="display:none;margin-top:1rem;">
+
+      <div class="league-card" style="grid-column: 1 / -1;">
+        <h3>Two Man's Fun League <span style="font-size:0.75rem;font-weight:400;color:var(--mid);">&mdash; 2026 Past Events</span></h3>
         <div class="league-day">Every Wednesday &bull; 5:15 PM Tee Off</div>
         <p style="margin-top:0.75rem;"><strong>Session 3 (Fall 2-Man):</strong> August 12 | August 19 | August 26 | September 2 | September 9</p>
         <p>Casual fun league format.</p>
@@ -651,7 +659,7 @@
       </div>
 
       <div class="league-card" style="grid-column: 1 / -1;">
-        <h3>Men's League</h3>
+        <h3>Men's League <span style="font-size:0.75rem;font-weight:400;color:var(--mid);">&mdash; 2026 Past Events</span></h3>
         <div class="league-day">Every Wednesday &bull; 27 Teams &bull; 3-Man Scramble</div>
         <p style="margin-top:0.75rem;"><strong>Session 1:</strong> April 15 | April 22 | April 29 | May 6 | May 13 | May 20 | May 27</p>
         <p><strong>Session 2:</strong> June 3 | June 10 | June 17 | June 24 | July 1 | July 8 | July 15</p>
@@ -665,7 +673,7 @@
       </div>
 
       <div class="league-card" style="grid-column: 1 / -1;">
-        <h3>Ladies' League</h3>
+        <h3>Ladies' League <span style="font-size:0.75rem;font-weight:400;color:var(--mid);">&mdash; 2026 Past Events</span></h3>
         <div class="league-day">Every Tuesday • 5:30 PM Tee Off</div>
         <p style="margin-top:0.75rem;"><strong>Session 1:</strong> May 19 | May 26 | June 2 | June 9 | June 16 | June 23 | June 30</p>
         <p><strong>Session 2:</strong> July 7 | July 14 | July 21 | July 28 | August 4</p>
@@ -675,14 +683,13 @@
         <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfWz87saMgdFnX4gALrRLazFhbAqT-eqHVy1pa_l4EX-jbUZQ/viewform?usp=header" target="_blank" style="margin-top:1.25rem;display:inline-block;">Sign Up</a>
       </div>
 
-      <div class="league-card" style="grid-column: 1 / -1;">
-        <h3>Couples League</h3>
-        <div class="league-day">Typically Every Other Friday</div>
-        <p>See the Calendar tab at the top for current schedule.</p>
-        <p>Couples league plays every other Friday evening. Sign up the night of the event &mdash; no pre-registration needed.</p>
-      </div>
-
     </div>
+    <script>
+      document.getElementById('past-leagues-toggle').addEventListener('click', function() {
+        var archive = document.getElementById('past-leagues-archive');
+        archive.style.display = archive.style.display === 'none' ? 'block' : 'none';
+      });
+    </script>
   </div>
 </section>
 
