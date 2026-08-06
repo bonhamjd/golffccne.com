@@ -1,0 +1,12 @@
+# macOS system files
+.DS_Store
+Icon
+Icon?
+Icon*
+
+# Working documents not meant for the live site
+*.csv
+*.xlsx
+*.docx
+*.pdf
+FCC_*.md
