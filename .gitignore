@@ -10,3 +10,13 @@ Icon*
 *.docx
 *.pdf
 FCC_*.md
+
+# Working folders not meant for the live site
+2026-league/
+playoffs/
+reference/
+_to_delete/
+
+# Public downloads served on the site
+!docs/
+!docs/*.pdf
