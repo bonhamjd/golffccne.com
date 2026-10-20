@@ -41,23 +41,29 @@ nav {
   font-weight: 600;
   letter-spacing: 0.02em;
   text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-right: 2rem;
 }
 .nav-logo span { color: var(--red); }
 .nav-links {
   display: flex;
-  gap: 1.75rem;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
   list-style: none;
 }
 .nav-links a {
+  white-space: nowrap;
   color: #ccc;
   text-decoration: none;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 500;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--red); }
+.nav-links a[aria-current="page"] { color: #fff; }
+.nav-links a:focus-visible, .nav-toggle:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
 
 /* hamburger */
 .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
@@ -88,12 +94,19 @@ nav {
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
-.hero-logo {
-  width: 220px;
-  max-width: 80%;
-  margin-bottom: 2rem;
-  border-radius: 4px;
+.hero-title {
   position: relative;
+  line-height: 0;
+  margin-bottom: 1.75rem;
+}
+.hero-logo {
+  display: block;
+  width: 260px;
+  height: auto;
+  max-width: 70vw;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px rgba(255,255,255,0.06), 0 14px 34px rgba(0,0,0,0.45);
 }
 .hero h1 {
   font-family: var(--font-display);
@@ -191,16 +204,10 @@ nav {
 section { padding: 5rem 2rem; }
 section:nth-child(odd) { background: var(--cream); }
 section:nth-child(even) { background: var(--sand); }
-#leagues { background: var(--green); }
+section#leagues { background: var(--green); }
 #leagues .section-label { color: rgba(255,255,255,0.5); }
 #leagues .section-title { color: #fff; }
-#leagues .section-title::after { background: var(--red); }
-#leagues .league-card { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.15); border-top-color: var(--red); }
-#leagues .league-card h3 { color: #fff; }
-#leagues .league-card p { color: rgba(255,255,255,0.75); }
-#leagues .league-day { color: rgba(255,200,180,0.9); }
-#leagues .league-card strong { color: #fff; }
-#leagues .league-card a:not(.btn) { color: var(--red); }
+#leagues .season-msg { color: rgba(255,255,255,0.9); }
 
 .container { max-width: 900px; margin: 0 auto; }
 
@@ -276,50 +283,6 @@ section:nth-child(even) { background: var(--sand); }
 .link-signup:hover { background: #a33a20; }
 .link-results { background: var(--border); color: var(--mid); cursor: default; }
 .link-results.active { background: var(--green); color: #fff; cursor: pointer; }
-
-/* ── LEAGUES ── */
-.leagues-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-  margin-top: 0.5rem;
-}
-.league-card {
-  background: var(--cream);
-  border: 1px solid var(--border);
-  border-top: 3px solid var(--red);
-  padding: 1.75rem;
-  border-radius: 2px;
-}
-.league-card h3 {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 0.25rem;
-}
-.league-day {
-  font-size: 0.75rem;
-  color: var(--red);
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-.league-card p {
-  font-size: 0.88rem;
-  color: var(--mid);
-  line-height: 1.5;
-}
-.league-card .btn {
-  margin-top: 1.25rem;
-  font-size: 0.72rem;
-  padding: 0.5rem 1.1rem;
-  display: inline-block;
-  background: var(--black);
-  color: #fff;
-  border: 2px solid var(--black);
-}
-.league-card .btn:hover { background: var(--red); border-color: var(--red); }
 
 /* ── MEMBERSHIP ── */
 .membership-grid {
@@ -491,13 +454,36 @@ body.page-calendar { background: var(--green); }
   color: var(--black);
 }
 .archive-subhead:first-of-type { margin-top: 0; }
+.archive-year {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--mid);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--border);
+}
+.archive-list { list-style: none; max-width: 680px; }
+.archive-list li { padding: 1rem 0; border-bottom: 1px solid var(--border); }
+.archive-list li:last-child { border-bottom: none; }
+.archive-list h4 { font-size: 1rem; font-weight: 600; color: var(--black); }
+.archive-list p { font-size: 0.9rem; color: var(--mid); line-height: 1.55; }
+.archive-list .archive-meta { font-size: 0.82rem; margin-bottom: 0.3rem; }
+.archive-list a { color: var(--black); text-decoration: underline; text-decoration-color: var(--border); text-underline-offset: 3px; }
+.archive-list a:hover { color: var(--red); text-decoration-color: currentColor; }
+.archive-list .archive-links { margin-top: 0.35rem; }
+.quiet-link { margin-top: 2.5rem; font-size: 0.9rem; }
+.quiet-link a { color: var(--mid); text-decoration: underline; text-underline-offset: 3px; }
+.quiet-link a:hover { color: var(--red); }
 
 /* ── MOBILE ── */
 @media (max-width: 720px) {
-  .nav-links { display: none; flex-direction: column; position: absolute; top: 56px; left: 0; right: 0; background: var(--black); padding: 1rem 2rem 1.5rem; gap: 1rem; }
+  nav { padding: 0 1.25rem; }
+  .nav-links { display: none; flex-direction: column; position: absolute; top: 56px; left: 0; right: 0; background: var(--black); padding: 1rem 1.25rem 1.5rem; gap: 0; box-shadow: 0 8px 16px rgba(0,0,0,0.25); }
   .nav-links.open { display: flex; }
+  .nav-links a { display: block; padding: 0.7rem 0; font-size: 0.85rem; }
   .nav-toggle { display: block; }
-  nav { position: relative; }
   .info-item { flex: 1 1 140px; }
   .membership-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -572,11 +558,17 @@ body.page-calendar { background: var(--green); }
   color: var(--red);
 }
 .feature-facts .fact-value { font-size: 1.15rem; font-weight: 500; color: #fff; }
-.season-note { margin-top: 1.5rem; font-size: 0.9rem; color: var(--mid); }
-.season-note a { color: var(--red); font-weight: 600; text-decoration: none; }
+
+/* leagues: season message and leagues page */
+.season-msg {
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--black);
+  max-width: 620px;
+}
 
 /* menu page */
-.menu-hero { min-height: 0; padding: 3.5rem 2rem 3rem; }
+.menu-hero, .page-hero { min-height: 0; padding: 3.5rem 2rem 3rem; }
 .menu-hero .hero-tagline { font-size: 1.15rem; font-weight: 400; max-width: 560px; }
 .menu-section .container { max-width: 760px; }
 .menu-intro {
@@ -642,7 +634,18 @@ body.page-calendar { background: var(--green); }
 .menu-print .btn { font-size: 0.9rem; padding: 0.8rem 1.6rem; }
 .btn-dark { background: var(--black); color: #fff; border: 2px solid var(--black); }
 .btn-dark:hover { background: var(--red); border-color: var(--red); }
-.menu-print p { font-size: 1.05rem; color: #4a4540; }
+.menu-call {
+  margin-top: 2.5rem;
+  padding: 1.1rem 1.4rem;
+  background: var(--sand);
+  border-left: 4px solid var(--red);
+  font-size: 1.45rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--black);
+}
+.menu-call a { color: var(--red); font-weight: 700; white-space: nowrap; text-decoration: none; }
+.menu-call a:hover { text-decoration: underline; }
 
 @media (max-width: 720px) {
   .feature-card { grid-template-columns: 1fr; padding: 1.75rem 1.5rem; gap: 1.25rem; }
@@ -651,4 +654,6 @@ body.page-calendar { background: var(--green); }
   .promo-banner span.promo-part { display: block; }
   .sides-list { grid-template-columns: 1fr; }
   .menu-item { font-size: 1.3rem; }
+  .menu-call { font-size: 1.3rem; }
+  .hero-logo { width: 200px; }
 }
