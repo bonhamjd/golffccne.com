@@ -39,6 +39,7 @@
     .fmt-table th, .fmt-table td { border-bottom:1px solid var(--border); padding:0.65rem 0.5rem; text-align:left; font-size:0.87rem; vertical-align:top; }
     .fmt-table thead th { font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--mid); font-weight:600; }
     .fmt-table td:first-child { font-weight:600; white-space:nowrap; }
+    @media (max-width: 480px) { .fmt-table td:first-child { white-space:normal; } }
     .rules { background:var(--sand); padding:1.5rem; border-left:3px solid var(--red); margin-top:2rem; font-size:0.87rem; }
     .rules p { margin-bottom:0.6rem; }
     .rules p:last-child { margin-bottom:0; }
